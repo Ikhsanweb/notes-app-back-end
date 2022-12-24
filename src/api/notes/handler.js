@@ -20,7 +20,10 @@ class NotesHandler {
       const { id: credentialId } = request.auth.credentials;
 
       const noteId = await this._service.addNote({
-        title, body, tags, owner: credentialId,
+        title,
+        body,
+        tags,
+        owner: credentialId,
       });
 
       const response = h.response({
